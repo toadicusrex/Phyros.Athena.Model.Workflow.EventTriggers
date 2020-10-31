@@ -6,6 +6,8 @@ branches:
   only:
   - master
 nuget:
+  account_feed: true
+  project_feed: true
   disable_publish_on_pr: false
 build_script:
 - ps: ./build.ps1
