@@ -1,0 +1,14 @@
+version: 0.1.{build}
+image: Ubuntu
+environment:
+  NugetApiKey: w5dws55jd0sfp849n6l9d4aq
+branches:
+  only:
+  - master
+nuget:
+  disable_publish_on_pr: false
+build_script:
+- ps: ./build.ps1
+deploy_script:
+- ps: ./build.ps1 Pack -NugetVersionPrefix 0.1.$env:APPVEYOR_BUILD_NUMBER  -NugetVersionSuffix alpha
+- ps: ./build.ps1 Push --NugetApiUrl "https://ci.appveyor.com/nuget/toadicusrex/api/v2/package" --NugetApiKey $env:NugetApiKey
