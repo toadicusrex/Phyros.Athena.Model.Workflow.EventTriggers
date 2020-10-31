@@ -32,7 +32,7 @@ class Build : NukeBuild
 	readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
 
 	[Parameter("Nuget Version Prefix")]
-	readonly string NugetVersionPrefix = "0.0.9";
+	readonly string NugetVersionPrefix = "0.0.1";
 
 	[Parameter("Nuget Version Suffix")]
 	readonly string NugetVersionSuffix = String.Empty;
