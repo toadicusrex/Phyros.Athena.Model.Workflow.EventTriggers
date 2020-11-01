@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Phyros.Athena.Model.Workflow.ProcessItems" Version="0.1.26-alpha" />
+    <PackageReference Include="Phyros.Athena.Model.Workflow.ProcessItems" Version="0.1.28-alpha" />
   </ItemGroup>
 
 </Project>

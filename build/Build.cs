@@ -63,7 +63,7 @@ class Build : NukeBuild
 			.Executes(() =>
 			{
 				DotNetRestore(s => s
-							.SetProjectFile(Solution));
+					.SetProjectFile(Solution));
 			});
 
 	Target Compile => _ => _

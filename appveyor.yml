@@ -1,7 +1,7 @@
 version: 0.1.{build}
 image: Ubuntu
 install:
-  - nuget sources add -Name MyAccountFeed -Source https://ci.appveyor.com/nuget/toadicusrex -UserName %nuget_user% -Password %nuget_password%
+  - nuget sources add -Name MyGetFeed -Source https://www.myget.org/F/phyros/api/v3/index.json
 environment:
   NugetApiKey: w5dws55jd0sfp849n6l9d4aq
 branches:
