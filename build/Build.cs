@@ -63,6 +63,7 @@ class Build : NukeBuild
 			.Executes(() =>
 			{
 				DotNetRestore(s => s
+					.AddSources("https://www.myget.org/F/phyros/api/v3/index.json")
 					.SetProjectFile(Solution));
 			});
 
