@@ -20,12 +20,6 @@ using static Nuke.Common.Tools.DotNet.DotNetTasks;
 
 class Build : NukeBuild
 {
-	/// Support plugins are available for:
-	///   - JetBrains ReSharper        https://nuke.build/resharper
-	///   - JetBrains Rider            https://nuke.build/rider
-	///   - Microsoft VisualStudio     https://nuke.build/visualstudio
-	///   - Microsoft VSCode           https://nuke.build/vscode
-
 	public static int Main() => Execute<Build>(x => x.Compile);
 
 	[Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
@@ -37,10 +31,10 @@ class Build : NukeBuild
 	[Parameter("Nuget Version Suffix")]
 	readonly string NugetVersionSuffix = String.Empty;
 
-	[Parameter] 
+	[Parameter]
 	string NugetApiUrl = "https://api.nuget.org/v3/index.json"; //default
 
-	[Parameter] 
+	[Parameter]
 	string NugetApiKey;
 
 	[Solution] readonly Solution Solution;
@@ -83,12 +77,12 @@ class Build : NukeBuild
 		.Executes(() =>
 		{
 			DotNetPack(s => s
-				.SetProject(Solution.GetProject("Phyros.Athena.Model.Workflow.EventTriggers"))
+				.SetProject(Solution.GetProject(BuildSettings.ProjectName))
 				.SetConfiguration(Configuration)
 				.EnableNoBuild()
 				.EnableNoRestore()
-				.SetDescription("EventTrigger model interfaces for Phyros Athena Workflow.")
-				.SetPackageTags("BPMN BPM Phyros Athena Workflow EventTrigger")
+				.SetDescription(BuildSettings.Description)
+				.SetPackageTags(BuildSettings.PackageTags)
 				.SetNoDependencies(true)
 				.SetOutputDirectory(ArtifactsDirectory)
 				.SetVersionPrefix(NugetVersionPrefix)

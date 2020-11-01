@@ -1,9 +1,7 @@
 version: 0.1.{build}
 image: Ubuntu
-install:
-  - nuget sources add -Name MyGetFeed -Source https://www.myget.org/F/phyros/api/v3/index.json
 environment:
-  NugetApiKey: w5dws55jd0sfp849n6l9d4aq
+  NugetApiKey: 6e01b1be-4aa2-445d-bd6e-036fa77e600c
 branches:
   only:
   - master
@@ -13,4 +11,4 @@ build_script:
 - ps: ./build.ps1
 deploy_script:
 - ps: ./build.ps1 Pack -NugetVersionPrefix 0.1.$env:APPVEYOR_BUILD_NUMBER  -NugetVersionSuffix alpha
-- ps: ./build.ps1 Push --NugetApiUrl "https://ci.appveyor.com/nuget/toadicusrex/api/v2/package" --NugetApiKey $env:NugetApiKey
+- ps: ./build.ps1 Push --NugetApiUrl "https://www.myget.org/F/phyros/api/v2/package" --NugetApiKey $env:NugetApiKey

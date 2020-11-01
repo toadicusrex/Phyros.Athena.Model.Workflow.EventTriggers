@@ -1,0 +1,8 @@
+﻿<Project>
+	<PropertyGroup>
+		<Authors>Todd Bennion, Phyros LLC</Authors>
+		<RepositoryUrl>https://github.com/toadicusrex/Phyros.Athena.Model.Workflow.EventTriggers</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/toadicusrex/Phyros.Athena.Model.Workflow.EventTriggers</PackageProjectUrl>
+		<PackageLicense>https://github.com/toadicusrex/Phyros.Athena.Model.Workflow.EventTriggers/blob/master/LICENSE</PackageLicense>
+	</PropertyGroup>
+</Project>
